@@ -9,7 +9,7 @@
 ## 📦 Etapa 1 – Pré-processamento dos Dados (16 a 18 de abril)
 
 - [ ] 16/04 – Organizar os datasets de imagens de satélite
-- [ ] 16/04 – Organizar os dados temporais de produtividade agrícola
+- [x] 16/04 – Organizar os dados temporais de produtividade agrícola
 - [ ] 17/04 – Tratar os dados (limpeza, valores faltantes, formatação
 - [ ] 17/04 – Estruturar os dados para entrada no modelo
 - [ ] 18/04 – Identificar padrões e sazonalidades no NDVI
@@ -59,7 +59,7 @@
 
 ## 💻 Entregável 2 – Código (25 a 26 de abril)
 
-- [ ] 25/04 – Criar novo repositório no GitHub para a Sprint 2
+- [x] 25/04 – Criar novo repositório no GitHub para a Sprint 2
 - [ ] 25/04 – Adicionar script de pré-processamento
 - [ ] 25/04 – Adicionar implementação do modelo
 - [ ] 26/04 – Incluir arquivos de entrada/saída (pasta `data/`)
