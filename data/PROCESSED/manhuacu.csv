@@ -1,4 +1,4 @@
-ano,production (kg),area (ha),productivity (kg/ha)
+Year,Production (kg),Area (ha),Productivity (kg/ha)
 1974,4352000,2176,2000.0
 1975,1308000,2180,600.0
 1976,2095000,2538,825.4531126871552
