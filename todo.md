@@ -10,7 +10,7 @@
 
 - [ ] 16/04 – Organizar os datasets de imagens de satélite
 - [x] 16/04 – Organizar os dados temporais de produtividade agrícola
-- [ ] 17/04 – Tratar os dados (limpeza, valores faltantes, formatação
+- [ ] 17/04 – Tratar os dados (limpeza, valores faltantes, formatação)
 - [ ] 17/04 – Estruturar os dados para entrada no modelo
 - [ ] 18/04 – Identificar padrões e sazonalidades no NDVI
 - [ ] 18/04 – Explorar abordagens estatísticas sobre a produtividade
@@ -60,9 +60,9 @@
 ## 💻 Entregável 2 – Código (25 a 26 de abril)
 
 - [x] 25/04 – Criar novo repositório no GitHub para a Sprint 2
-- [ ] 25/04 – Adicionar script de pré-processamento
-- [ ] 25/04 – Adicionar implementação do modelo
-- [ ] 26/04 – Incluir arquivos de entrada/saída (pasta `data/`)
+- [x] 25/04 – Adicionar script de pré-processamento
+- [x] 25/04 – Adicionar implementação do modelo
+- [x] 26/04 – Incluir arquivos de entrada/saída (pasta `data/`)
 - [ ] 26/04 – Criar README com instruções de execução
 - [ ] 26/04 – Incluir notebook com comentários explicativos
 - [ ] 26/04 – Gravar vídeo demonstrativo (máx. 5 minutos)
@@ -70,13 +70,13 @@
 
 ---
 
-## 🛠️ Organização do Grupo (Ao longo da Sprint)
+## 🛠️ Organização do Grupo (Ao longo da Sprint) (Opcional)
 
 - [ ] 16/04 – Dividir as tarefas entre os membros do grupo
-- [ ] 16/04 – Criar board no GitHub Projects para acompanhar o progresso
-- [ ] Diariamente – Versionar código no GitHub com commits organizados
+- [x] 16/04 – Criar board no GitHub Projects para acompanhar o progresso
+- [x] Diariamente – Versionar código no GitHub com commits organizados
 - [ ] Ao longo da sprint – Registrar decisões/dificuldades nas issues
-- [ ] Até 20/04 – Agendar reunião com tutor (caso necessário)
+- [x] Até 20/04 – Agendar reunião com tutor (caso necessário)
 
 ---
 
