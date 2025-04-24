@@ -63,7 +63,7 @@
 - [x] 25/04 – Adicionar script de pré-processamento
 - [x] 25/04 – Adicionar implementação do modelo
 - [x] 26/04 – Incluir arquivos de entrada/saída (pasta `data/`)
-- [ ] 26/04 – Criar README com instruções de execução
+- [x] 26/04 – Criar README com instruções de execução
 - [ ] 26/04 – Incluir notebook com comentários explicativos
 - [ ] 26/04 – Gravar vídeo demonstrativo (máx. 5 minutos)
 - [ ] 26/04 – Subir o vídeo no YouTube e adicionar o link no repositório
