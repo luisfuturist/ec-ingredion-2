@@ -66,7 +66,7 @@
 - [x] Criar README com instruções de execução
 - [x] Incluir notebook com comentários explicativos
 - [x] Gravar vídeo demonstrativo (máx. 5 minutos)
-- [ ] Subir o vídeo no YouTube e adicionar o link no repositório
+- [x] Subir o vídeo no YouTube e adicionar o link no repositório
 
 ---
 
@@ -98,8 +98,8 @@
 ### 🎥 Vídeo de Apresentação
 
 - [x] Revisar som, duração, clareza e qualidade do vídeo
-- [ ] Confirmar que o vídeo está no YouTube com link "não listado"
-- [ ] Adicionar link ao README.md
+- [x] Confirmar que o vídeo está no YouTube com link "não listado"
+- [x] Adicionar link ao README.md
 
 ### 📚 Documentação
 
@@ -111,4 +111,4 @@
 
 - [x] Backup do repositório e documentos importantes
 - [x] Reunião de revisão final com o grupo
-- [ ] Confirmar entrega conforme edital/plataforma oficial
+- [x] Confirmar entrega conforme edital/plataforma oficial
