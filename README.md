@@ -27,6 +27,7 @@ Este projeto desenvolve um modelo de aprendizado de máquina para previsão de p
 ├── README.md - Este README
 ├── requirements.txt
 ├── scripts
+│   └── extract-ndvi-manhuacu.ipynb - Jupyter Notebook para extração de dados NDVI de Manhuaçu, MG
 │   └── prepare-data.ipynb - Jupyter Notebook para preparação de dados
 ├── src
 │   └── eda.ipynb - Notebook de Análise Exploratória e Estatísticas Resultantes 
