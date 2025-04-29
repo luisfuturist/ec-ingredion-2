@@ -65,7 +65,7 @@
 - [x] Incluir arquivos de entrada/saída (pasta `data/`)
 - [x] Criar README com instruções de execução
 - [x] Incluir notebook com comentários explicativos
-- [ ] Gravar vídeo demonstrativo (máx. 5 minutos)
+- [x] Gravar vídeo demonstrativo (máx. 5 minutos)
 - [ ] Subir o vídeo no YouTube e adicionar o link no repositório
 
 ---
@@ -97,7 +97,7 @@
 
 ### 🎥 Vídeo de Apresentação
 
-- [ ] Revisar som, duração, clareza e qualidade do vídeo
+- [x] Revisar som, duração, clareza e qualidade do vídeo
 - [ ] Confirmar que o vídeo está no YouTube com link "não listado"
 - [ ] Adicionar link ao README.md
 
