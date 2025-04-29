@@ -17,8 +17,8 @@ Este projeto desenvolve um modelo de aprendizado de máquina para previsão de p
 │   ├── PROCESSED
 │   │   ├── manhuacu.csv
 │   │   └── ndvi.csv
-│   ├── SATVEG
-│   │   └── satveg_planilha.xlsx - Série NDVI (2000–2023): SATVEG/INPE
+│   ├── GOOGLE_EARTH_ENGINE
+│   │   └── ndvi_manhuacu.csv - Série NDVI (2000–2025): Google Earth Engine
 │   └── SIDRA
 │       └── tabela1613.xlsx - Dados de produção (1974–2023): IBGE/Tabela 1613
 ├── models
