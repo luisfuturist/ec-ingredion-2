@@ -33,7 +33,7 @@
 - [x] Treinar o modelo com dados históricos
 - [x] Validar a capacidade preditiva
 - [x] Ajustar hiperparâmetros
-- [ ] Documentar lógica e decisões
+- [x] Documentar lógica e decisões
 
 ---
 
@@ -50,9 +50,9 @@
 ## 📁 Entregável 1 – Documentação
 
 - [x] Documentar a preparação dos dados
-- [ ] Justificar a escolha das variáveis e do modelo
-- [ ] Incluir análises exploratórias e prints relevantes
-- [ ] Incluir gráficos e métricas de avaliação
+- [x] Justificar a escolha das variáveis e do modelo
+- [x] Incluir análises exploratórias e prints relevantes
+- [x] Incluir gráficos e métricas de avaliação
 - [ ] Adicionar link do vídeo no `README.md`
 
 ---
@@ -64,9 +64,9 @@
 - [x] Adicionar implementação do modelo
 - [x] Incluir arquivos de entrada/saída (pasta `data/`)
 - [x] Criar README com instruções de execução
-- [ ] Incluir notebook com comentários explicativos
+- [x] Incluir notebook com comentários explicativos
 - [ ] Gravar vídeo demonstrativo (máx. 5 minutos)
-- [ ] Subir o vídeo no YouTube e adicionar o link no repositório
+- [ s] Subir o vídeo no YouTube e adicionar o link no repositório
 
 ---
 

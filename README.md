@@ -7,32 +7,37 @@
 
 ## Descrição
 
-Este projeto desenvolve um modelo de aprendizado de máquina para previsão de produtividade agrícola na região de Manhuaçu (MG), substituindo métodos tradicionais de análise baseados em estimativas manuais e dados desconectados. Ao integrar imagens de satélite (índice de vegetação NDVI) e dados históricos de produção, o modelo identifica padrões sazonais e relações entre saúde vegetal e produtividade, gerando previsões precisas para auxiliar na tomada de decisões. A solução melhora a eficiência no planejamento agrícola, reduz perdas por fatores ambientais e otimiza a alocação de recursos, sendo adaptável a diferentes culturas e escalável para outras regiões.
+Este projeto desenvolve um modelo de Inteligência Artificial para prever a produtividade agrícola, focando na cultura do café na região de Manhuaçu (MG).  Substituímos abordagens tradicionais, que dependem de estimativas manuais e dados fragmentados, por uma solução que integra imagens de satélite (índice de vegetação NDVI) e dados históricos de produção. O modelo aprende a identificar padrões sazonais e as relações entre a saúde da vegetação e a produtividade, gerando previsões mais precisas para dar suporte à tomada de decisões.
+
+A solução proposta visa:
+
+*   **Otimizar o planejamento agrícola:** Fornecendo previsões de produtividade mais acuradas, auxiliando na alocação eficiente de recursos (fertilizantes, mão de obra, etc.).
+*   **Reduzir perdas:** Identificando tendências e possíveis impactos de fatores ambientais (seca, pragas, etc.) na produção.
+*   **Adaptabilidade e escalabilidade:** A solução é projetada para ser adaptada a diferentes culturas e escalável para outras regiões, aumentando seu valor estratégico.
 
 ## Estrutura de Arquivos
 
-```txt
-.
-├── data - Arquivos de entrada e saída usados no processo
-│   ├── PROCESSED
-│   │   ├── manhuacu.csv
-│   │   └── ndvi.csv
-│   ├── GOOGLE_EARTH_ENGINE
-│   │   └── ndvi_manhuacu.csv - Série NDVI (2000–2025): Google Earth Engine
-│   └── SIDRA
-│       └── tabela1613.xlsx - Dados de produção (1974–2023): IBGE/Tabela 1613
-├── models
-│   ├── lstm.pth - Pesos do modelo LSTM
-│   └── mlp.pth - Pesos do modelo MLP
-├── README.md - Este README
-├── requirements.txt
-├── scripts
-│   └── extract-ndvi-manhuacu.ipynb - Jupyter Notebook para extração de dados NDVI de Manhuaçu, MG
-│   └── prepare-data.ipynb - Jupyter Notebook para preparação de dados
-├── src
-│   └── eda.ipynb - Notebook de Análise Exploratória e Estatísticas Resultantes 
-│   └── ml.ipynb - Notebook de Implementação dos Modelos de IA
-└── TODO.md - Gestão do projeto
+```py
+├── data                  # Arquivos de entrada e saída usados no processo
+│   ├── PROCESSED           # Dados pré-processados para os modelos
+│   │   ├── manhuacu.csv  # Produção histórica (1974-2023) + NDVI anual médio
+│   │   └── ndvi.csv      # Série temporal NDVI (2000-2023) com colunas cíclicas
+│   ├── GOOGLE_EARTH_ENGINE # Dados NDVI extraídos do Google Earth Engine
+│   │   └── ndvi_manhuacu.csv # Série NDVI (2000–2025): Google Earth Engine
+│   └── SIDRA               # Dados de produção do IBGE
+│       └── tabela1613.xlsx # Dados de produção (1974–2023): IBGE/Tabela 1613
+├── models                # Arquivos de pesos dos modelos treinados
+│   ├── lstm.pth        # Pesos do modelo LSTM
+│   └── mlp.pth         # Pesos do modelo MLP
+├── README.md             # Este README
+├── requirements.txt      # Lista de dependências do projeto
+├── scripts               # Notebooks para extração e preparação dos dados
+│   └── extract-ndvi-manhuacu.ipynb # Extração NDVI de Manhuaçu, MG (Google Earth Engine)
+│   └── prepare-data.ipynb           # Preparação e integração dos dados
+├── src                   # Código fonte dos modelos e análise exploratória
+│   └── eda.ipynb       # Análise Exploratória (EDA) e estatísticas
+│   └── ml.ipynb        # Implementação e treinamento dos modelos de IA
+└── TODO.md               # Gestão do projeto e tarefas pendentes
 ```
 
 ## Documentação
@@ -86,13 +91,19 @@ Usar um ambiente virtual isola as dependências do projeto.
 
 ### Prints da Análise Exploratória e Estatísticas Resultantes
 
-[png1] [png2]
+Para equivalentes às prints da Análise Exploratória e Estatísticas Resultantes:
+
+[EDA](./src/eda.ipynb)
 
 ### Processo de Preparação dos Dados
 
 - Link para código e documentação: [Jupyter Notebook](./scripts/prepare-data.ipynb)
 
-A preparação dos dados envolveu duas principais fontes: dados de produção agrícola provenientes do IBGE (SIDRA) e dados de vegetação (NDVI) processados via Google Earth Engine.
+A coleta e preparação dos dados envolvem duas etapas principais: extração de dados brutos de produtividade agrícola (SIDRA/IBGE) e de vegetação (NDVI via Google Earth Engine), seguidas por um processo de transformação e consolidação em um formato estruturado para modelagem.
+
+---
+
+#### Coleta de Dados
 
 **1. Dados de Produção Agrícola (SIDRA/IBGE):**
 
@@ -101,46 +112,131 @@ A preparação dos dados envolveu duas principais fontes: dados de produção ag
   - **Variável:** Área plantada, Área colhida, Quantidade produzida, Rendimento médio da produção e Valor da produção.
   - **Produto:** Café (em grão) Total.
   - **Ano:** Todos os disponíveis (marcar a caixa "Selecionar todos").
-  - **Unidade Territorial:** Minas Gerais.
+  - **Unidade Territorial:**
+     - **Unidade da Federação:** 31. Minas Gerais
+     - **Mesoregião Geográfica:** 3112. Zona da Mata (MG)
+     - **Município:** 3139409. Manhuaçu (MG)
 - Faça o download em formato `.xlsx`.
 
 **2. Dados de NDVI (Google Earth Engine):**
 
 - A coleta dos dados de NDVI foi realizada programaticamente utilizando o Google Earth Engine (GEE) e a coleção MODIS/061/MOD13Q1.
-- A região de interesse foi definida como um buffer de 1 km de raio centrado no ponto geográfico correspondente a **Manhuaçu, Minas Gerais**, obtido via geocodificação com a biblioteca `geopy`.
-- O período analisado abrange de **01/01/2000 a 31/12/2025**.
-- A coleção de imagens foi filtrada espacialmente com base nessa geometria e temporalmente com base nas datas de início e fim. Apenas a banda **NDVI** foi selecionada.
-- Para cada imagem da coleção, foi calculada a **média regional de NDVI**, e o resultado foi convertido em uma tabela contendo a data e o valor médio correspondente.
-- Os valores foram normalizados para escala de 0 a 1 (divisão por 10.000).
-- Os dados finais foram exportados como um arquivo `.csv` para o diretório `../data/GOOGLE_EARTH_ENGINE/ndvi_manhuacu.csv`.
+- A região de interesse foi definida como um buffer de 1 km centrado em **Manhuaçu, Minas Gerais**, obtido via geocodificação (`geopy`).
+- O período coletado abrange de **01/01/2000 a 31/12/2025**.
+- As imagens foram filtradas espacial e temporalmente, com média regional de NDVI computada para cada data.
+- Os valores foram normalizados para escala 0–1.
+- Exportação final: `../data/GOOGLE_EARTH_ENGINE/ndvi_manhuacu.csv`.
 
-> **Observação:** Para executar o script, é necessário autenticar com o GEE (`ee.Authenticate()` na primeira execução) e configurar o arquivo `.env` com a variável `GOOGLE_EARTH_ENGINE_PROJECT_ID`.
+> **Nota:** É necessário autenticar com o GEE e configurar o `.env` com `GOOGLE_EARTH_ENGINE_PROJECT_ID`.
+
+---
+
+#### Preparação dos Dados
+
+**1. Processamento dos dados do SIDRA:**
+
+- A partir do `.xlsx` baixado, duas planilhas foram utilizadas:
+  - **"Quantidade produzida"**: filtrada apenas para **Manhuaçu (MG)**, transposta e renomeada por ano.
+  - **"Área colhida"**: processo idêntico ao anterior, resultando em área em hectares por ano.
+- As duas tabelas foram unificadas por ano, e foi calculada a **produtividade anual (kg/ha)**.
+- Resultado final salvo em: `../data/PROCESSED/manhuacu.csv`.
+
+**2. Processamento dos dados de NDVI:**
+
+- O CSV coletado do GEE foi carregado com `pandas`.
+- As colunas foram renomeadas (`date` → `Data`, `ndvi` → `NDVI`).
+- Foi extraído o campo **ano** a partir da data para posterior agregação e análise.
+- Resultado final salvo em: `../data/PROCESSED/ndvi.csv`.
+
+Esses conjuntos de dados prontos servem como base de entrada para os modelos de previsão de produtividade agrícola utilizados neste projeto.
+
+#### Análise Exploratória (EDA)
+
+A análise exploratória foi crucial para entender os dados e direcionar o desenvolvimento dos modelos.
+
+*   **Série Temporal NDVI:** Visualização da série temporal NDVI (2000-2025) para identificar padrões sazonais e anomalias.
+    *   [Gráfico da série NDVI](./src/eda.ipynb)
+*   **Correlação entre NDVI, Área e Produção:**  Análise da correlação entre as variáveis para identificar relações preditivas.
+    *   [Gráfico de Correlação](./src/eda.ipynb)
+*   **Distribuição das Variáveis:** Boxplots para identificar outliers e entender a distribuição dos dados.
+    *   [Boxplots das Variáveis](./src/eda.ipynb)
+*   **Dados Faltantes:**  Verificação da existência de dados faltantes e tratamento adequado.
+    *   Não há dados faltantes nas variáveis utilizadas.
+*   **Relação entre NDVI, Área e Produção:** Gráficos de dispersão 3D e contorno para visualizar a relação entre as três variáveis.
+    *   [Gráfico 3D da relação](./src/eda.ipynb)
 
 ### Funcionamento do Código
 
-#### Modelagem e Algoritmos
+*   Link para código e documentação: [Jupyter Notebook](./src/ml.ipynb)
+
+Nosso projeto utiliza PyTorch para construir e treinar modelos de Machine Learning. O pipeline implementa pré-processamento avançado, modelagem com MLP e LSTM, e otimização para GPU via CUDA.
 
 #### Abordagens Implementadas
 
-Foram desenvolvidas e comparadas duas arquiteturas de redes neurais profundas, cada uma com características específicas para o problema de previsão de produtividade agrícola:
+Duas arquiteturas de redes neurais profundas foram implementadas e comparadas para a previsão de produtividade agrícola:
 
-MLP (Multilayer Perceptron)	Rede neural densa para capturar padrões não lineares.	- Camadas ocultas: 32 → 16 neurônios
- - Função de ativação: ReLU + Tanh amplificada
- - Janela temporal: 5 observações
+| Modelo                         | Descrição                                                                                     | Arquitetura                                                                                                                     | Justificativa                                                                                                               |
+| :----------------------------- | :-------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
+| MLP (Multilayer Perceptron)    | Rede neural *feed-forward* para capturar padrões não lineares e relações diretas.            | 32 → 16 neurônios, ativação ReLU + Tanh amplificada, janela temporal de 5 observações.                                   | Simplicidade e eficiência para aprender padrões anuais de curto prazo.                                                      |
+| LSTM (Long Short-Term Memory) | Rede recorrente para capturar dependências temporais de longo prazo e variações sazonais complexas. | 2 camadas LSTM com 32 unidades cada, janela temporal de 20 observações, *dropout* para evitar *overfitting*. | Capacidade de memorizar dependências temporais de longo prazo e modelar a evolução sazonal da vegetação. |
 
-LSTM (Long Short-Term Memory)	Rede recorrente para dependências temporais de longo prazo.	- Camadas LSTM: 2
- - Neurônios ocultos: 32
- - Janela temporal: 20 observações
+#### Hiperparâmetros
 
-Critério de Escolha:
- - MLP: Simplicidade e eficiência para padrões anuais.
- - LSTM: Capacidade de memorizar variações sazonais complexas.
+A escolha dos hiperparâmetros foi crucial para otimizar o desempenho dos modelos. Ajustamos os hiperparâmetros para otimizar o desempenho dos modelos MLP e LSTM. O MLP utiliza uma janela temporal menor (5 observações) focada em padrões anuais, taxa de aprendizado de 2e-3, 300 épocas e arquitetura 32→16 neurônios, enquanto o LSTM emprega janela ampliada (20 observações) para capturar dependências temporais longas, com 2 camadas recorrentes (32 neurônios cada), dropout de 20% para regularização, taxa de aprendizado menor (5e-5) e treinamento prolongado (1000 épocas), sendo que ambas arquiteturas demonstram resultados consistentes (loss de validação ~0.19 e ~0.21 respectivamente), com configurações otimizadas mantendo batch sizes específicos (4 para MLP, 16 para LSTM) para equilibrar eficiência computacional e estabilidade do treinamento.
+
+##### MLP Hyperparameters
+*   MLP\_WINDOW\_SIZE = 5
+*   MLP\_BATCH\_SIZE = 4
+*   MLP\_BASE\_HIDDEN\_SIZE = 32
+*   MLP\_EPOCHS = 300
+*   MLP\_LEARNING\_RATE = 2e-3
+
+##### LSTM Hyperparameters
+*   LSTM\_WINDOW\_SIZE = 20
+*   LSTM\_HIDDEN\_SIZE = 32
+*   LSTM\_NUM\_LAYERS = 2
+*   LSTM\_DROPOUT = 0.2
+*   LSTM\_EPOCHS = 1000
+*   LSTM\_BATCH\_SIZE = 16
+*   LSTM\_LEARNING\_RATE = 5e-5
 
 ### Justificativa da Escolha das Variáveis
 
+As principais variáveis utilizadas são:
+
+*   **NDVI (Normalized Difference Vegetation Index):** Indicador da saúde da vegetação, obtido a partir de imagens de satélite. Reflete a quantidade e qualidade da biomassa vegetal, sendo um bom indicador da atividade fotossintética e do potencial de crescimento da cultura.
+*   **Dados Históricos de Produção:** Quantidade produzida e área cultivada, provenientes de dados do IBGE. Permitem ao modelo aprender padrões históricos de produtividade e suas relações com o NDVI.
+*   **Seno e Cosseno da Data:** Representações cíclicas da data (dia do ano) que permitem ao modelo capturar a sazonalidade da cultura e seus efeitos na produtividade.
+*   **Ano:** Permite ao modelo identificar tendências de longo prazo e possíveis efeitos de mudanças climáticas ou tecnológicas na produtividade.
+*   **Área (ha):** Área colhida em hectares.
+
 ### Justificativa do Modelo e sua Lógica Preditiva
 
+O objetivo é prever a produtividade agrícola utilizando dados históricos de NDVI e produção. A lógica preditiva se baseia em:
+
+*   **Relação entre NDVI e Produtividade:** Um NDVI mais alto geralmente indica maior biomassa e atividade fotossintética, o que, em teoria, se traduz em maior produtividade.
+*   **Padrões Sazonais:** A cultura do café tem um ciclo de crescimento sazonal bem definido, que é capturado pelas representações cíclicas da data.
+*   **Tendências de Longo Prazo:** O modelo pode aprender tendências de aumento ou diminuição da produtividade ao longo dos anos.
+
+#### Arquiteturas
+
+*   **MLP:** Adequado para aprender relações não lineares diretas entre o NDVI e a produtividade em um determinado ano. Útil para capturar padrões anuais.
+*   **LSTM:** Capaz de modelar dependências temporais de longo prazo, o que é crucial para entender como a evolução da vegetação ao longo do tempo afeta a produtividade.
+
+A escolha entre MLP e LSTM (ou a combinação de ambos) depende da complexidade dos dados e da importância das dependências temporais.
+
 ### Justificativa Técnica com Métricas e Gráficos Ilustrando os Resultados
+
+Tanto os modelos MLP quanto LSTM foram avaliados utilizando a métrica de Mean Squared Error (MSE), em dados normalizados.
+O modelo MLP obteve uma métrica MSE de 0.3241, enquanto o modelo LSTM obteve uma métrica de 0.4573, indicando que o modelo MLP apresentou uma performance superior, dado o conjunto de dados utilizado.
+
+Visualização das predições do modelo MLP:
+
+[MLP Predictions](./src/ml.ipynb)
+
+Visualização das predições do modelo LSTM:
+
+[LSTM Predictions](./src/ml.ipynb)
 
 ## Equipe
 
