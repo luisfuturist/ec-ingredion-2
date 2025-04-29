@@ -66,7 +66,7 @@
 - [x] Criar README com instruções de execução
 - [x] Incluir notebook com comentários explicativos
 - [ ] Gravar vídeo demonstrativo (máx. 5 minutos)
-- [ s] Subir o vídeo no YouTube e adicionar o link no repositório
+- [ ] Subir o vídeo no YouTube e adicionar o link no repositório
 
 ---
 
