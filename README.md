@@ -2,7 +2,7 @@
 
 > Este projeto faz parte do curso de **Inteligência Artificial** oferecido pela [FIAP](https://github.com/fiap) - Online 2024. Este repositório reúne os materiais relacionados ao **Enterprise Challenge - Ingredion**, correspondendo à **Sprint 2** do desafio.
 
-- Video de Apresentação: [Youtube]()
+- Video de Apresentação: [Youtube](https://youtu.be/DkEt2MwQabE)
 - Notebook para Correção: [Jupyter Notebook](./src/ml.ipynb)
 
 ## Descrição
