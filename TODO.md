@@ -84,16 +84,16 @@
 
 ### 🧪 Testes Finais
 
-- [ ] Rodar o pipeline completo do projeto (pré-processamento → modelo → saída)
-- [ ] Validar notebooks e scripts em ambiente limpo
-- [ ] Verificar se `requirements.txt` ou instruções de ambiente estão corretas
+- [x] Rodar o pipeline completo do projeto (pré-processamento → modelo → saída)
+- [x] Validar notebooks e scripts em ambiente limpo
+- [x] Verificar se `requirements.txt` ou instruções de ambiente estão corretas
 
 ### 📁 Repositório GitHub
 
-- [ ] README revisado e completo
-- [ ] Código limpo e organizado em pastas
-- [ ] Instruções de execução funcionais
-- [ ] Todos os arquivos necessários versionados ou linkados corretamente
+- [x] README revisado e completo
+- [x] Código limpo e organizado em pastas
+- [x] Instruções de execução funcionais
+- [x] Todos os arquivos necessários versionados ou linkados corretamente
 
 ### 🎥 Vídeo de Apresentação
 
@@ -103,12 +103,12 @@
 
 ### 📚 Documentação
 
-- [ ] Revisar ortografia e conteúdo final da documentação
-- [ ] Garantir que prints, gráficos e análises estão presentes
-- [ ] Confirmar versão final com o grupo e, se necessário, exportar para PDF
+- [x] Revisar ortografia e conteúdo final da documentação
+- [x] Garantir que prints, gráficos e análises estão presentes
+- [x] Confirmar versão final com o grupo e, se necessário, exportar para PDF
 
 ### 🧘‍♂️ Backup & Tranquilidade
 
-- [ ] Backup do repositório e documentos importantes
-- [ ] Reunião de revisão final com o grupo
+- [x] Backup do repositório e documentos importantes
+- [x] Reunião de revisão final com o grupo
 - [ ] Confirmar entrega conforme edital/plataforma oficial
