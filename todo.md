@@ -8,48 +8,48 @@
 
 ## 📦 Etapa 1 – Pré-processamento dos Dados (16 a 18 de abril)
 
-- [ ] 16/04 – Organizar os datasets de imagens de satélite
+- [x] 16/04 – Organizar os datasets de imagens de satélite
 - [x] 16/04 – Organizar os dados temporais de produtividade agrícola
-- [ ] 17/04 – Tratar os dados (limpeza, valores faltantes, formatação)
-- [ ] 17/04 – Estruturar os dados para entrada no modelo
-- [ ] 18/04 – Identificar padrões e sazonalidades no NDVI
-- [ ] 18/04 – Explorar abordagens estatísticas sobre a produtividade
+- [x] 17/04 – Tratar os dados (limpeza, valores faltantes, formatação)
+- [x] 17/04 – Estruturar os dados para entrada no modelo
+- [x] 18/04 – Identificar padrões e sazonalidades no NDVI
+- [x] 18/04 – Explorar abordagens estatísticas sobre a produtividade
 
 ---
 
 ## 🔍 Etapa 2 – Extração de Informações Relevantes (19 a 20 de abril)
 
-- [ ] 19/04 – Definir variáveis-chave para o modelo
-- [ ] 19/04 – Analisar relação entre NDVI e produtividade
-- [ ] 20/04 – Identificar períodos críticos da cultura
-- [ ] 20/04 – Segmentar imagens para áreas de cultivo
+- [x] 19/04 – Definir variáveis-chave para o modelo
+- [x] 19/04 – Analisar relação entre NDVI e produtividade
+- [x] 20/04 – Identificar períodos críticos da cultura
+- [x] 20/04 – Segmentar imagens para áreas de cultivo
 
 ---
 
 ## 🧠 Etapa 3 – Construção do Modelo (21 a 23 de abril)
 
-- [ ] 21/04 – Escolher tipo de modelo de IA (ML tradicional, CNN, etc.)
-- [ ] 21/04 – Implementar modelo com dados tratados
-- [ ] 22/04 – Treinar o modelo com dados históricos
-- [ ] 23/04 – Validar a capacidade preditiva
-- [ ] 23/04 – Ajustar hiperparâmetros
+- [x] 21/04 – Escolher tipo de modelo de IA (ML tradicional, CNN, etc.)
+- [x] 21/04 – Implementar modelo com dados tratados
+- [x] 22/04 – Treinar o modelo com dados históricos
+- [x] 23/04 – Validar a capacidade preditiva
+- [x] 23/04 – Ajustar hiperparâmetros
 - [ ] 23/04 – Documentar lógica e decisões
 
 ---
 
 ## 📊 Etapa 4 – Avaliação e Ajustes (24 de abril)
 
-- [ ] 24/04 – Testar o modelo com diferentes períodos
-- [ ] 24/04 – Avaliar precisão e confiabilidade (acurácia, MAE, RMSE, etc.)
-- [ ] 24/04 – Ajustar modelo com base nos resultados
-- [ ] 24/04 – Gerar visualizações (gráficos, scatterplots, etc.)
-- [ ] 24/04 – Registrar insights e limitações encontradas
+- [x] 24/04 – Testar o modelo com diferentes períodos
+- [x] 24/04 – Avaliar precisão e confiabilidade (acurácia, MAE, RMSE, etc.)
+- [x] 24/04 – Ajustar modelo com base nos resultados
+- [x] 24/04 – Gerar visualizações (gráficos, scatterplots, etc.)
+- [x] 24/04 – Registrar insights e limitações encontradas
 
 ---
 
 ## 📁 Entregável 1 – Documentação (25 de abril)
 
-- [ ] 25/04 – Documentar a preparação dos dados
+- [x] 25/04 – Documentar a preparação dos dados
 - [ ] 25/04 – Justificar a escolha das variáveis e do modelo
 - [ ] 25/04 – Incluir análises exploratórias e prints relevantes
 - [ ] 25/04 – Incluir gráficos e métricas de avaliação
@@ -72,7 +72,7 @@
 
 ## 🛠️ Organização do Grupo (Ao longo da Sprint) (Opcional)
 
-- [ ] 16/04 – Dividir as tarefas entre os membros do grupo
+- [x] 16/04 – Dividir as tarefas entre os membros do grupo
 - [x] 16/04 – Criar board no GitHub Projects para acompanhar o progresso
 - [x] Diariamente – Versionar código no GitHub com commits organizados
 - [ ] Ao longo da sprint – Registrar decisões/dificuldades nas issues

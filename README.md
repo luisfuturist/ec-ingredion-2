@@ -56,18 +56,5 @@ Usar um ambiente virtual isola as dependências do projeto.
     ```
    Mais detalhes sobre instalação do PyTorch: https://pytorch.org/get-started/locally/
 
-## 👥 Equipe
-
-### Membros
-- Amandha Nery (RM560030)
-- Bruno Conterato (RM561048)
-- Gustavo Castro (RM560831)
-- Kild Fernandes (RM560615)
-- Luis Emidio (RM559976)
-
-### Professores
-- Tutor: Leonardo Ruiz Orabona
-- Coordenador: André Godoi
-
 ## 📬 Contato  
 Se tiver alguma dúvida, sinta-se à vontade para entrar em contato. 🚀
