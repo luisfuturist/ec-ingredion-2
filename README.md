@@ -92,6 +92,30 @@ Usar um ambiente virtual isola as dependências do projeto.
 
 - Link para código e documentação: [Jupyter Notebook](./scripts/prepare-data.ipynb)
 
+A preparação dos dados envolveu duas principais fontes: dados de produção agrícola provenientes do IBGE (SIDRA) e dados de vegetação (NDVI) processados via Google Earth Engine.
+
+**1. Dados de Produção Agrícola (SIDRA/IBGE):**
+
+- Acesse o site do SIDRA: [Produção Agrícola Municipal - Culturas Permanentes](https://sidra.ibge.gov.br/tabela/1613)
+- Selecione as seguintes opções:
+  - **Variável:** Área plantada, Área colhida, Quantidade produzida, Rendimento médio da produção e Valor da produção.
+  - **Produto:** Café (em grão) Total.
+  - **Ano:** Todos os disponíveis (marcar a caixa "Selecionar todos").
+  - **Unidade Territorial:** Minas Gerais.
+- Faça o download em formato `.xlsx`.
+
+**2. Dados de NDVI (Google Earth Engine):**
+
+- A coleta dos dados de NDVI foi realizada programaticamente utilizando o Google Earth Engine (GEE) e a coleção MODIS/061/MOD13Q1.
+- A região de interesse foi definida como um buffer de 1 km de raio centrado no ponto geográfico correspondente a **Manhuaçu, Minas Gerais**, obtido via geocodificação com a biblioteca `geopy`.
+- O período analisado abrange de **01/01/2000 a 31/12/2025**.
+- A coleção de imagens foi filtrada espacialmente com base nessa geometria e temporalmente com base nas datas de início e fim. Apenas a banda **NDVI** foi selecionada.
+- Para cada imagem da coleção, foi calculada a **média regional de NDVI**, e o resultado foi convertido em uma tabela contendo a data e o valor médio correspondente.
+- Os valores foram normalizados para escala de 0 a 1 (divisão por 10.000).
+- Os dados finais foram exportados como um arquivo `.csv` para o diretório `../data/GOOGLE_EARTH_ENGINE/ndvi_manhuacu.csv`.
+
+> **Observação:** Para executar o script, é necessário autenticar com o GEE (`ee.Authenticate()` na primeira execução) e configurar o arquivo `.env` com a variável `GOOGLE_EARTH_ENGINE_PROJECT_ID`.
+
 ### Funcionamento do Código
 
 #### Modelagem e Algoritmos
